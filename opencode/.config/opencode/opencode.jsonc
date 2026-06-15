@@ -1,0 +1,84 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "context-mode",
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "mcp": {
+    "sqlite": {
+      "type": "local",
+      "enabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sqlite",
+        "--db",
+        "/opt/portilo-web/data/portilo.db"
+      ]
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "enabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "context7": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-c323e395-5179-4f7d-b83d-a7bc2914ae34"
+      }
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    }
+  },
+  "provider": {
+    "llama-local": {
+      "name": "llama.cpp",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:8081/v1"
+      },
+      "models": {
+        "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf": { 
+          "name": "unsloth/Qwen3.6-35B-A3B"
+        },
+        "Qwen3.5-122B-A10B-Uncensored-APEX-I-Compact.gguf": { 
+          "name": "qwen3.5-122b-a10b-uncensored-apex-i-compact"
+        },
+        "MoE.Qwen3.6-35B-A3B.256k": {
+          "name": "MoE.Qwen3.6-35B-A3B.256k"
+        }
+      }
+    },
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen3.6-35b-a3b-mtp": {
+          "name": "qwen3.6-35b-a3b-mtp"
+        },
+        "unsloth/qwen3.6-35b-a3b": {
+          "name": "unsloth/qwen3.6-35b-a3b"
+        },
+        "openai/gpt-oss-20b": {
+          "name": "gpt-oss-20b"
+        }
+      }
+    }
+  }
+}
+

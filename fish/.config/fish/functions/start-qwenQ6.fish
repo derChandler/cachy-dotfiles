@@ -1,0 +1,40 @@
+function start-qwenq6 --description 'Klassischer llama.cpp Start für Qwen3.6-35B-A3B-UD'
+    set -l MODEL_PATH "/opt/llama.cpp/models/unsloth/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q6_K.gguf"
+
+    echo "======================================================================="
+    echo "🚀 Starte llama.cpp API-Server für Pi Agent"
+    echo "📦 Modell: Qwen3.6-35B-A3B-UD-Q6K (Klassischer Modus, ohne MTP)"
+    echo "======================================================================="
+    
+    llama-server \
+      -m $MODEL_PATH \
+      --fit on \
+      --fit-ctx 262144 \
+      --fit-target 512 \
+      -np 1 \
+      -fa on \
+      --no-mmap \
+      --mlock \
+      -b 2048 \
+      -ub 2048 \
+      -ctk q8_0 \
+      -ctv q8_0 \
+      --temp 0.6 \
+      --top-p 0.95 \
+      --top-k 20 \
+      --min-p 0.0 \
+      --presence-penalty 0.0 \
+      --repeat-penalty 1.0 \
+      --reasoning-budget -1 \
+      --chat-template-kwargs "{\"preserve_thinking\": true}" \
+      --host 0.0.0.0 \
+      --port 8081 \
+      --swa-full \
+      --ctx-checkpoints 64 \
+      --context-shift\
+      --kv-unified 
+
+
+end
+
+

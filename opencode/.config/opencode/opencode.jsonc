@@ -50,10 +50,10 @@
         "baseURL": "http://127.0.0.1:8081/v1"
       },
       "models": {
-        "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf": { 
+        "Qwen3.6-35B-A3B-UD-Q4_K_M.gguf": {
           "name": "unsloth/Qwen3.6-35B-A3B"
         },
-        "Qwen3.5-122B-A10B-Uncensored-APEX-I-Compact.gguf": { 
+        "Qwen3.5-122B-A10B-Uncensored-APEX-I-Compact.gguf": {
           "name": "qwen3.5-122b-a10b-uncensored-apex-i-compact"
         },
         "MoE.Qwen3.6-35B-A3B.256k": {
@@ -79,6 +79,80 @@
         }
       }
     }
+  },
+  "agent": {
+    "plan": {
+      "permission": {
+        "doom_loop": "ask",
+        "external_directory": {
+          "*": "ask",
+          "/home/florian/.local/share/opencode/tool-output/*": "allow",
+          "/tmp/opencode/*": "allow",
+          "/home/florian/.agents/skills/session-completion-workflow/*": "allow",
+          "/home/florian/.agents/skills/conventional-commits/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/using-git-worktrees/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/executing-plans/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/finishing-a-development-branch/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/receiving-code-review/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/test-driven-development/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/verification-before-completion/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/writing-plans/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/dispatching-parallel-agents/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/requesting-code-review/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/writing-skills/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/using-superpowers/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/brainstorming/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/systematic-debugging/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/subagent-driven-development/*": "allow",
+          "/home/florian/.local/share/opencode/plans/*": "allow"
+        },
+        "plan_enter": "deny",
+        "read": {
+          "*.env": "ask",
+          "*.env.*": "ask",
+          "*.env.example": "allow"
+        },
+        "task": {
+          "general": "deny"
+        },
+        "edit": {
+          "*": "deny",
+          ".opencode/plans/*.md": "allow",
+          "../../home/florian/.local/share/opencode/plans/*.md": "allow"
+        }
+      }
+    },
+    "build": {
+      "permission": {
+        "doom_loop": "ask",
+        "external_directory": {
+          "*": "ask",
+          "/home/florian/.local/share/opencode/tool-output/*": "allow",
+          "/tmp/opencode/*": "allow",
+          "/home/florian/.agents/skills/session-completion-workflow/*": "allow",
+          "/home/florian/.agents/skills/conventional-commits/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/verification-before-completion/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/using-git-worktrees/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/test-driven-development/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/receiving-code-review/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/finishing-a-development-branch/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/executing-plans/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/dispatching-parallel-agents/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/writing-plans/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/using-superpowers/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/systematic-debugging/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/requesting-code-review/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/subagent-driven-development/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/writing-skills/*": "allow",
+          "/home/florian/.cache/opencode/packages/superpowers@git+https:/github.com/obra/superpowers.git/node_modules/superpowers/skills/brainstorming/*": "allow"
+        },
+        "plan_exit": "deny",
+        "read": {
+          "*.env": "ask",
+          "*.env.*": "ask",
+          "*.env.example": "allow"
+        }
+      }
+    }
   }
 }
-

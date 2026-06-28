@@ -72,3 +72,6 @@ end
 if test -d $HOME/.local/bin
     set -gx PATH "$HOME/.local/bin" $PATH
 end
+
+# opencode
+fish_add_path /Users/florian/.opencode/bin

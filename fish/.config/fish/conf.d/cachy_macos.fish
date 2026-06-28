@@ -59,11 +59,11 @@ if test (uname) = "Darwin"
 
     # Eza (Moderner Ersatz für 'ls')
     if type -q eza
-        alias ls "eza --icons --group-directories-first"
-        alias ll "eza -l --icons --group-directories-first"
-        alias la "eza -a --icons --group-directories-first"
-        alias lla "eza -la --icons --group-directories-first"
-        alias tree "eza --tree --icons"
+        alias ls='eza -al --color=always --group-directories-first --icons=always' # preferred listing
+        alias la='eza -a --color=always --group-directories-first --icons=always'  # all files and dirs
+        alias ll='eza -l --color=always --group-directories-first --icons=always'  # long format
+        alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
+        alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
     end
 
     # Bat (Moderner Ersatz für 'cat')
@@ -80,7 +80,7 @@ if test (uname) = "Darwin"
 
     # System Updates & Pacman-Feeling für den Mac
     alias pacman "brew"
-    alias cachy-update "brew update && brew upgrade"
+    alias brew-update "brew update && brew upgrade"
 
     # Git Shortcuts
     alias g "git"

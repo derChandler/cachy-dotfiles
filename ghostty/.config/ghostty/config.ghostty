@@ -4,11 +4,11 @@
 
 theme = GitHub Dark Default
 
-background = #0D1117
-foreground = #c9d1d9
-cursor-color = #768bab
+#background = #0D1117
+#foreground = #c9d1d9
+cursor-color = #ced5dc
 selection-background = #768bab
-selection-foreground = #c9d1d9
+selection-foreground = #ced5dc
 
 # ----------------------------------------------------
 # Window & Layout 
@@ -30,6 +30,7 @@ unfocused-split-opacity = 0.3
 font-family = "JetBrains Mono"
 font-size = 13.0
 adjust-cell-height = 20%
+font-feature = "liga=1,calt=1,ss01=1,ss02=1,ss19=1"
 
 # ----------------------------------------------------
 # Maus & Cursor

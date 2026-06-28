@@ -1,4 +1,9 @@
 function dev --description 'Lädt das JSON-Layout in einen neuen Tab des aktuellen Fensters'
+    if not type -q konsole
+        echo "Error: 'konsole' is not available on this system."
+        return 1
+    end
+
     set layout_file "$HOME/.local/share/konsole/development.json"
     
     if not test -f $layout_file

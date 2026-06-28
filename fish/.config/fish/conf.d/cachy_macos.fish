@@ -25,11 +25,9 @@ if test (uname) = "Darwin"
     # -------------------------------------------------------------------
     if status is-interactive
 
-        # Starship Prompt & Zoxide initialisieren
-        starship init fish | source
-        zoxide init fish | source
 
         # FZF (Command Line Fuzzy Finder) aktivieren
+
         if type -q fzf
             fzf --fish | source
         end

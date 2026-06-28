@@ -16,7 +16,7 @@ if test (uname) = "Linux"
     end
     
     # Default terminal variable for Linux environments
-    set -x TERMINAL konsole
+    set -x TERMINAL ghostty
 end
 
 # -------------------------------------------------------------------

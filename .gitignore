@@ -36,3 +36,8 @@ id_ed25519.pub
 .npm/
 .yarn/
 *.log
+*.bak
+*.bkp
+
+# lazy lock file
+nvim/.config/nvim/lazy-lock.json

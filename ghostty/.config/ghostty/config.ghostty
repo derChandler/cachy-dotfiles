@@ -23,6 +23,8 @@ window-theme = auto
 
 background-opacity = 0.9
 unfocused-split-opacity = 0.3
+unfocused-split-fill = #0a0a0a
+split-divider-color = #768bab
 
 # ----------------------------------------------------
 # Text 
@@ -46,6 +48,8 @@ mouse-scroll-multiplier = 1.0
 # ----------------------------------------------------
 
 #keybind = btn3=paste_from_clipboard
+
+
 
 # ----------------------------------------------------
 # Advanced Terminal Features

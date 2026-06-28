@@ -44,8 +44,14 @@ mouse-shift-capture = false
 mouse-scroll-multiplier = 1.0
 
 # ----------------------------------------------------
+# macOS Option Key (Alt Key behavior)
+# ----------------------------------------------------
+macos-option-as-alt = left
+
+# ----------------------------------------------------
 # Keybindings 
 # ----------------------------------------------------
+
 
 #keybind = btn3=paste_from_clipboard
 

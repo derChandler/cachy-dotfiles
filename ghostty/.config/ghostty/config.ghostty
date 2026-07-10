@@ -20,8 +20,12 @@ window-height = 28
 window-decoration = false
 window-padding-balance = true
 window-theme = auto
+gtk-titlebar = false
+macos-titlebar-style = hidden
+macos-option-as-alt = true
 
 background-opacity = 0.9
+background-blur = 20
 unfocused-split-opacity = 0.3
 unfocused-split-fill = #0a0a0a
 split-divider-color = #768bab

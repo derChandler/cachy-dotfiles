@@ -4,12 +4,17 @@
 # Grundeinstellungen
 # ========================================================
 
+# Config Version
+config-version = 2
+
 # Autostart beim Login
 start-at-login = true
 
 # Standard-Layout
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
+
+automatically-unhide-macos-hidden-apps = false
 
 # Fenster-Abstände (Gaps) für eine saubere Optik
 [gaps]
@@ -19,6 +24,9 @@ outer.left =       0
 outer.bottom =     0
 outer.top =        0
 outer.right =      0
+
+# Define Workspaces
+persistent-workspaces = ["mail", "browser", "coding", "terminal", "docker", "notes", "video"]
 
 # ========================================================
 # Haupt-Tastenbelegungen (Mode: Main)
@@ -53,6 +61,10 @@ alt-t = 'workspace terminal'
 alt-d = 'workspace docker'
 alt-n = 'workspace notes'
 alt-v = 'workspace video'
+
+# Workspace back-and-forth
+alt-tab = 'workspace-back-and-forth'
+
 
 # --------------------------------------------------------
 # Fenster verschieben UND direkt mitwechseln
@@ -91,6 +103,23 @@ l = 'resize width +50'
 # Modus beenden
 enter = 'mode main'
 esc = 'mode main'
+
+# ========================================================
+# Servide-Modus
+# ========================================================
+
+alt-shift-s = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
+
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
+alt-shift-l = ['join-with right', 'mode main']
 
 
 # ========================================================

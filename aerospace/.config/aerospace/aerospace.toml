@@ -1,0 +1,144 @@
+# ~/.config/aerospace/aerospace.toml
+
+# ========================================================
+# Grundeinstellungen
+# ========================================================
+
+# Autostart beim Login
+start-at-login = true
+
+# Standard-Layout
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Fenster-Abstände (Gaps) für eine saubere Optik
+[gaps]
+inner.horizontal = 2
+inner.vertical =   2
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      0
+
+# ========================================================
+# Haupt-Tastenbelegungen (Mode: Main)
+# ========================================================
+[mode.main.binding]
+
+# Terminal direkt starten (Ghostty)
+alt-enter = 'exec-and-forget open -n -a Ghostty'
+
+# AeroSpace Konfiguration neu laden
+alt-shift-r = 'reload-config'
+
+# Fokus wechseln (Vim-Style)
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# Fenster im aktuellen Workspace verschieben
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# --------------------------------------------------------
+# Benannte Workspaces aufrufen
+# --------------------------------------------------------
+alt-m = 'workspace mail'
+alt-b = 'workspace browser'
+alt-c = 'workspace coding'
+alt-t = 'workspace terminal'
+alt-d = 'workspace docker'
+alt-n = 'workspace notes'
+alt-v = 'workspace video'
+
+# --------------------------------------------------------
+# Fenster verschieben UND direkt mitwechseln
+# --------------------------------------------------------
+alt-shift-m = ['move-node-to-workspace mail', 'workspace mail']
+alt-shift-b = ['move-node-to-workspace browser', 'workspace browser']
+alt-shift-c = ['move-node-to-workspace coding', 'workspace coding']
+alt-shift-t = ['move-node-to-workspace terminal', 'workspace terminal']
+alt-shift-d = ['move-node-to-workspace docker', 'workspace docker']
+alt-shift-n = ['move-node-to-workspace notes', 'workspace notes']
+alt-shift-v = ['move-node-to-workspace video', 'workspace video']
+
+# --------------------------------------------------------
+# Layouts & Modi
+# --------------------------------------------------------
+# Fullscreen Toggle
+alt-f = 'fullscreen'
+
+# Layout-Typ ändern
+alt-s = 'layout v_accordion' # Fenster übereinanderlegen (Stacking/Tabbed)
+alt-w = 'layout tiles'       # Zurück zum Tiling (Achtung: war vorher alt-t)
+
+# In den Resize-Modus wechseln
+alt-r = 'mode resize'
+
+
+# ========================================================
+# Resize-Modus
+# ========================================================
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+
+# Modus beenden
+enter = 'mode main'
+esc = 'mode main'
+
+
+# ========================================================
+# App-Regeln (Floating & Automatischer Workspace)
+# ========================================================
+
+# --- Floating Windows (Apps, die nicht gekachelt werden sollen) ---
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
+
+# --- Automatische Zuweisungen zu Workspaces ---
+
+# Mail -> Apple Mail
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace mail', 'workspace mail']
+
+# Browser -> Firefox
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = ['move-node-to-workspace browser', 'workspace browser']
+
+# Coding -> VSCode
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace coding', 'workspace coding']
+
+# Terminal -> Ghostty
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['move-node-to-workspace terminal', 'workspace terminal']
+
+# Docker -> Docker Desktop
+[[on-window-detected]]
+if.app-id = 'com.docker.docker'
+run = ['move-node-to-workspace docker', 'workspace docker']
+
+# Notes -> Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace notes', 'workspace notes']
+
+# VLC -> VLC Player
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = ['move-node-to-workspace video', 'workspace video','layout tiles']

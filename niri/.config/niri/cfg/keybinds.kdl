@@ -9,8 +9,8 @@ binds {
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
-    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
+    Mod+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
@@ -126,6 +126,11 @@ binds {
     CTRL+Shift+1                        { screenshot; }
     CTRL+Shift+2                        { screenshot-screen; }
     CTRL+Shift+3                        { screenshot-window; }
+
+    // ─── Noctalia Shortcuts ───
+    Mod+comma                            hotkey-overlay-title="Control Center" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+N                                hotkey-overlay-title="Toggle Night Light" { spawn-sh "qs -c noctalia-shell ipc call nightLight toggle"; }
+    Mod+V                                hotkey-overlay-title="Volume Settings" { spawn-sh "qs -c noctalia-shell ipc call volume togglePanel"; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.

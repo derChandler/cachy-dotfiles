@@ -26,6 +26,15 @@
        open-focused false
     }
 
+    window-rule {
+        match app-id="com.mitchellh.ghostty"
+        opacity 0.95
+        draw-border-with-background false
+        background-effect {
+            blur true
+        }
+    }
+
     layer-rule {
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true

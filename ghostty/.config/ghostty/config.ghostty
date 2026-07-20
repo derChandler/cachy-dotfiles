@@ -1,17 +1,13 @@
 # ----------------------------------------------------
-# Theme & Colors (GitHub Dark Default)
+# Theme & Colors (Twilight / Nord)
 # ----------------------------------------------------
 
-theme = GitHub Dark Default
+theme = twilight
 
-#background = #0D1117
-#foreground = #c9d1d9
-cursor-color = #ced5dc
-selection-background = #768bab
-selection-foreground = #ced5dc
+# Colors are set in the twilight theme
 
 # ----------------------------------------------------
-# Window & Layout 
+# Window & Layout
 # ----------------------------------------------------
 window-padding-x = 12
 window-padding-y = 12
@@ -19,7 +15,6 @@ window-width = 100
 window-height = 28
 window-decoration = false
 window-padding-balance = true
-window-theme = auto
 gtk-titlebar = false
 macos-titlebar-style = hidden
 macos-option-as-alt = true
@@ -31,7 +26,7 @@ unfocused-split-fill = #0a0a0a
 split-divider-color = #768bab
 
 # ----------------------------------------------------
-# Text 
+# Text
 # ----------------------------------------------------
 font-family = "JetBrains Mono"
 font-size = 13.0
@@ -53,7 +48,7 @@ mouse-scroll-multiplier = 1.0
 macos-option-as-alt = left
 
 # ----------------------------------------------------
-# Keybindings 
+# Keybindings
 # ----------------------------------------------------
 
 

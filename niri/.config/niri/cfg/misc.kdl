@@ -24,3 +24,17 @@
     hotkey-overlay {
        skip-at-startup
     }
+
+    blur {
+    // Reduziert die Intensität auf ein Minimum (Standard: 3)
+    passes 2
+
+    // Verringert die Ausdehnung des Effekts (Standard: 3.0)
+    offset 1
+
+    // Verhindert Farbabstufungen bei geringem Blur
+    noise 0.01
+
+    // Belässt die Farben im Hintergrund natürlich
+    saturation 1.0
+}

@@ -16,7 +16,7 @@
   "soft_wrap": "preferred_line_length",
   "preferred_line_length": 100,
   "show_line_numbers": true,
-  "scroll_beyond_last_line": false,
+  "scroll_beyond_last_line": "off",
   "cursor_blink": false,
   "autosave": "on_focus_change",
   "format_on_save": "on",
